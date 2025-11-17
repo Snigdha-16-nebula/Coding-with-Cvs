@@ -10,7 +10,7 @@ from io import StringIO           # to treat text response from web as a file (f
 # -----------------------------------------
 # Function to query ZTF (Zwicky Transient Facility) lightcurves
 # -----------------------------------------
-def get_ztf_lightcurve(ra_deg, dec_deg, radius_arcsec=2, band="r", fmt="csv"):
+def get_ztf_lightcurve(ra_deg, dec_deg, radius_arcsec=1.2, band="r", fmt="csv"):
     """
     Query the ZTF IRSA API for lightcurves around a given RA, Dec position.
     Parameters:
@@ -91,3 +91,4 @@ if all_lightcurves:
     print(f"\n✅ Saved r-band lightcurves for {len(catalogue)} stars ({len(merged)} total points)")
 else:
     print("\n❌ No lightcurves fetched.")
+
