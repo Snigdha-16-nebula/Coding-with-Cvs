@@ -1,6 +1,4 @@
-# ==========================================================
-# Import required Python libraries
-# ==========================================================
+#Code from extracting lightcurves of all elements from the given catalogue and grouping them based on their oids. Here we took 'r' bands only because this is considered to be the most prominent.
 import requests                         # for HTTP requests to fetch data from IRSA API
 import pandas as pd                     # for handling tabular data
 from astropy.coordinates import SkyCoord  # for converting RA/Dec into degrees
@@ -101,3 +99,4 @@ if all_lightcurves:
     
 else:
     print("\n❌ No lightcurves fetched.")
+
