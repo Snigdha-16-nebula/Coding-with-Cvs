@@ -1,21 +1,5 @@
+#funstion to fetch data randomly from files
 import pandas as pd
-neg_files = [
-    'negative_subset_group_1.parquet',
-    'negative_subset_group_10.parquet',
-    'negative_subset_group_11.parquet',
-    'negative_subset_group_12.parquet',
-    'negative_subset_group_13.parquet',
-    'negative_subset_group_14_noise.parquet',
-    'negative_subset_group_2.parquet',
-    'negative_subset_group_3.parquet',
-    'negative_subset_group_4.parquet',
-    'negative_subset_group_5.parquet',
-    'negative_subset_group_6.parquet',
-    'negative_subset_group_7.parquet',
-    'negative_subset_group_8.parquet',
-    'negative_subset_group_9.parquet'
-]
-
 
 def sample_unique_from_negative_subsets(file_list, samples_per_group, object_col="object", random_state=42):
     """
@@ -58,3 +42,4 @@ def sample_unique_from_negative_subsets(file_list, samples_per_group, object_col
     # Combine all sampled dataframes
     final_df = pd.concat(sampled_list, ignore_index=True)
     return final_df
+
