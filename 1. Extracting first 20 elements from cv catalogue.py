@@ -1,8 +1,10 @@
+#fetching data from given 'magnetic cataclysmic variable.txt' with columns 'Name, RA(J2000), DEC(J2000), Radius ,magnitude'
+
 import requests              # used here to talk to the ZTF API
 import pandas as pd          # Pandas for handling tabular data (reading/writing CSVs, merging, etc.)
 from astropy.coordinates import SkyCoord   # Astropy helper to convert RA/Dec strings to decimal degrees
 import astropy.units as u    # Unit system from Astropy (e.g., hours → degrees)
-from io import StringIO      # Lets us treat raw text as if it were a file (for reading CSV from API response)
+#from io import StringIO      # Lets us treat raw text as if it were a file (for reading CSV from API response )
 
 def get_ztf_lightcurve(ra_deg, dec_deg, radius_arcsec=2, band="g", fmt="csv"):
     """
@@ -85,3 +87,4 @@ if all_lightcurves:
 else:
     # If no lightcurves were found for any object
     print("\n❌ No lightcurves fetched.")
+
