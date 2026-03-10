@@ -98,4 +98,5 @@ print("Saved file: snad_lightcurves_grouped_2.parquet")
 # Display result
 
 
+
 print(grouped_df.head())
