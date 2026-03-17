@@ -1,0 +1,18 @@
+→ I fetched data from Fink from 01/01/26 to 24/02/26
+→ Then I followed your code
+Installed fink client
+Submitted job, pasted the code and downloaded the data
+ipython
+Import pandas as pd
+data=pd.read_parquet(‘ftransfer_ztf_2026-02-24_321595’)
+data.shape()
+data
+data[‘’finkclass]
+Import numpy as np
+np.unique(data[‘finkclass’].values)
+#to filter unknown, catacly_V*,catacly_V_candidate
+names=[‘unknown’,’CataclyV*’,’CataclyV*_candidates’]
+mask=data[‘finkclass’],apply(lambda x: x in names)
+data2=data[mask]
+#save now
+data2.to_parquet('masked_object.parquet', index=False)
